@@ -16,7 +16,7 @@ interface CartItem {
 }
 
 const Cart: React.FC = () => {
-  const {cartData} = useSelector((store: any) => store);
+  const cartData = useSelector((store: any) => store.cartData);
 
   const calculateTotalPrice = (): number => {
     let price = 0;

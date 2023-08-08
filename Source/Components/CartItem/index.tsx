@@ -19,7 +19,7 @@ interface CartItemProps {
 }
 
 const CartItem: React.FC<CartItemProps> = ({item}) => {
-  const {cartData} = useSelector((store: any) => store);
+  const cartData = useSelector((store: any) => store.cartData);
 
   const onAddQuantity = (itemKey: string) => {
     let cartindex = cartData.findIndex((ele: any) => ele.key === itemKey);
@@ -30,7 +30,7 @@ const CartItem: React.FC<CartItemProps> = ({item}) => {
       } else {
         cartItem.quantity = cartItem.quantity + 1;
         cartData[cartindex] = cartItem;
-        AppDispatcher.setCartItem(cartData);
+        AppDispatcher.setCartItem([...cartData]);
       }
     } else {
       Alert.alert('Item Does Not Exist on cart');
@@ -48,7 +48,7 @@ const CartItem: React.FC<CartItemProps> = ({item}) => {
       } else {
         cartItem.quantity = cartItem.quantity - 1;
         cartData[cartindex] = cartItem;
-        AppDispatcher.setCartItem(cartData);
+        AppDispatcher.setCartItem([...cartData]);
       }
     } else {
       Alert.alert('Item Does Not Exist on cart');
@@ -60,7 +60,7 @@ const CartItem: React.FC<CartItemProps> = ({item}) => {
     if (cartindex !== -1) {
       cartData.splice(cartindex, 1);
       console.log(cartData, 'after removing element');
-      AppDispatcher.setCartItem(cartData);
+      AppDispatcher.setCartItem([...cartData]);
     } else {
       Alert.alert('Item Does Not Exist on cart');
     }

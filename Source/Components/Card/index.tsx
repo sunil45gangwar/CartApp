@@ -15,7 +15,7 @@ interface Item {
 }
 
 const Card: React.FC<{ item: Item }> = ({ item }) => {
-  const { cartData } = useSelector((store: any) => store);
+  const cartData  = useSelector((store: any) => store.cartData);
   const navigation = useNavigation();
 
   const addToCart = (selectedItem: Item) => {
