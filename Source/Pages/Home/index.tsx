@@ -4,7 +4,7 @@ import CardWrapper from '../../Components/CardWrapper';
 
 const Home: React.FC = () => {
   return (
-    <View>
+    <View testID='card-wrapper'>
       <CardWrapper />
     </View>
   );

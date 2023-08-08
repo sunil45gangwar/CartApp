@@ -1,7 +1,7 @@
 import Actions from '../Actions/AppAction';
 
 interface AppState {
-  cartData: []; 
+  cartData: any[]; 
 }
 
 const initialState: AppState = {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
-import Button from './index'; // Update the import path accordingly
+import Button from './index'; 
 
 describe('Button component', () => {
   const mockOnClick = jest.fn();
@@ -18,5 +18,5 @@ describe('Button component', () => {
     fireEvent.press(buttonElement);
     expect(mockOnClick).toHaveBeenCalledTimes(1);
   });
-  
+
 });
